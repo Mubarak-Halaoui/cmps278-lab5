@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Order Pizza</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="Order.js"></script>
+    </head>
+
+    <body>
+        <h1 class="header">Pizza Order section</h1>
+        <form id="form1">
+            <div id="cont1">
+                <div class="slidecontainer">
+                    <input id="ranger" type="range" min="1" max="4" value="1" step="1" class="slider" style="width: 200px" onchange="updateTextInput(this.value);">
+                    <label id="label" for="size">Small 6$</label><br>
+                <img id="image" src="0-0.jpg" class="img1" >
+                </div>
+            </div>
+            <br>
+            <section>
+                <fieldset id="meatToppings">
+                <legend>Meat Toppings (+2$ for each)</legend>      
+                    <input type="checkbox" name="meat" value="Pepperoni">Pepperoni<br>      
+                    <input type="checkbox" name="meat" value="Sausage">Sausage<br>      
+                    <input type="checkbox" name="meat" value="Ground Beef">Ground Beef<br>  
+                    <input type="checkbox" name="meat" value="Anchovy">Anchovy<br>  
+                    <input type="checkbox" name="meat" value="Chicken">Chicken
+                </fieldset>
+            </section>
+            <br>
+            <section>
+                <fieldset id="veggieToppings">
+                <legend>Veggies (+1$ for each)</legend>      
+                    <input type="checkbox" name="veg" value="Tomatoes">Tomatoes<br>      
+                    <input type="checkbox" name="veg" value="Onions">Onions<br>      
+                    <input type="checkbox" name="veg" value="Olives">Olives<br>  
+                    <input type="checkbox" name="veg" value="Mushrooms">Mushrooms<br>  
+                    <input type="checkbox" name="veg" value="Pineapple">Pineapple<br>
+                    <input type="checkbox" name="veg" value="Spinach">Spinach<br>
+                    <input type="checkbox" name="veg" value="Jalapeno">Jalapeno
+                </fieldset>
+            </section>
+            <br><br>
+            <section>
+                <fieldset>
+                <legend>Cheese</legend>      
+                    <input type="radio" id="regCheese" value="1" name="Cheese">
+                    <label for="1">Regular Cheese</label><br>
+                    <input type="radio" id="noCheese" value="2" name="Cheese">
+                    <label for="2">No Cheese</label><br>  
+                    <input type="radio" id="extraCheese" value="3" name="Cheese">
+                    <label for="3">Extra Cheese</label>
+                </fieldset>
+            </section>
+            <section>
+                <fieldset>
+                <legend>Payment</legend>      
+                    <input type="radio" id="cash" name="cash">
+                    <label for="1">Cash</label>
+                    <input type="radio" id="mastercard" name="mastercard">
+                    <label for="2">Mastercard</label>
+                    <input type="radio" id="visa" name="visa">
+                    <label for="3">Visa</label>
+                </fieldset>
+            </section>
+        </form>
+        <br>
+        <form id="form2">
+            <div id="cont">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="pn">Phone Number:</label><br>
+                <input type="text" id="pn" name="pn"><br><br>
+                <label for="city">City:</label><br>
+                <select name="cities" id="cities">
+                    <option value="empty">-Please Choose an Option-</option>
+                    <option value="Beirut">Beirut</option>
+                    <option value="Byblos">Byblos</option>
+                    <option value="Chouf">Chouf</option>
+                    <option value="Trablous">Trablous</option>
+                    <option value="Jnoub">Jnoub</option>
+                </select><br><br>
+                <label for="Address">Address:</label><br>
+                <textarea name="comment" form="form2"></textarea>
+            </div>
+        </form>
+        <br><br>
+        <div id="form3">
+            <div id="OrderSummary">
+                <h1>Order Summary</h1>
+                <h2>Deliver to</h2>
+                <p id="dlvrTo"></p>
+                <h2>Order</h2>
+                <ul id="orderList"></ul>
+                <h2 id="total">Total</h2>
+            </div>
+        </div>
+    </body>
+
+</html>
