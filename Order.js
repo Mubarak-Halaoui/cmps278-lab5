@@ -31,26 +31,48 @@ function getCheese(){
         document.getElementById("result").innerHTML = c[i].value;
     }
 }
-function changePizzaSize() {
-    var width = $("#image").attr("width");
-    var height = $("#image").attr("height");            //change image size regarding to slider
-    $("#ranger").change( function() {
-    $("#image").attr("width",width * (ranger.value / 1))
-    $("#image").attr("height",height * (ranger.value / 1) )
-    });
-}
-
-function updateLabel(val) {
-    var v = document.getElementById('slider').value;
-    for (i=0; i<ranger.length; i++) {
-        if (v == 1)
+const sliderElem = document.getElementById('Slider');
+const imageElem = document.getElementById('pizza');
+                                                                    
+function ChangePizzaSize() {
+  const width = imageElem.getAttribute('width');
+  var v = document.getElementById('Slider').value;
+  var size = '';
+  var price = 0;
+                                                                     
+    for (i=0; i<sliderElem.length; i++) {
+        if (v == 1){
+        imageElem.width = "100";
+        size = 'small';
+        price = 6;
         return document.getElementById('label').value= 'small 6$';
-        if (v == 2)
+        }
+        if (v == 2){
+        imageElem.width = "150"
+        size = 'medium';
+        price = 10;
         return document.getElementById('label').value= 'medium 10$';
-        if (v == 3)
+        }
+        if (v == 3){                                                            //change image, price and size regarding to slider.
+        imageElem.width = "200"
+        size = 'large';
+        price = 14;
         return document.getElementById('label').value= 'large 14$';
-        if (v == 4)
+        }
+        if (v == 4){
+        imageElem.width = "250"
+        size = 'x-large';
+        price = 16;
         return document.getElementById('label').value= 'x-large 16$';
+        }
     }
-    document.getElementById('label').value=val; 
+}
+function fillSummary(){
+    var addressForm = document.getElementById("form2");
+    var parElement = document.getElementById("dlvrTo");
+                                                                                    //fill address inputs (form2) in p tag
+    for (var i = 0; i < addressForm.elements.length; i++) {
+        var adress = document.createTextNode(addressForm.elements[i].value);
+        parElement.appendChild(adress);
+    }
 }
